@@ -239,7 +239,7 @@ header
 main
   // Background and text flow
   background $background-color
-  flex 2
+  flex 2 1 60
   hypens auto
   overflow-x hidden
   padding 20px // Smaller padding on small screens
@@ -328,7 +328,8 @@ main
       border-radius 3px
       height auto
       margin-top 20px
-      width 100%
+      width auto
+      max-width 100%
     // Blockquotes within articles
     blockquote
       box-sizing border-box
@@ -831,7 +832,7 @@ figure.highlight
     flex-direction row
 
     header
-      flex 1
+      flex 1 0 12em
       overflow hidden
       text-align right
       padding 40px
@@ -851,7 +852,7 @@ figure.highlight
               padding 0
 
     main
-      flex 2
+      flex 12 1 0% 
       padding 40px
       form
         .form-column
