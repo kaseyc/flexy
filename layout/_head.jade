@@ -14,7 +14,7 @@ meta(name='viewport', content='width=device-width,initial-scale=1.0,maximum-scal
 link(rel='stylesheet', type='text/css', href= config.root + 'styles/screen.css')
 if page.vendor
    each val in page.vendor
-     <script src=/vendor/#{val}"></script>
+     <script src=/vendor/#{val}></script>
 
 if config.rss
   link(rel='alternate', type='application/rss+xml', title='RSS', href= config.rss)

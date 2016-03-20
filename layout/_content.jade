@@ -2,7 +2,6 @@
 if is_home()
   h4.page-title Recent Posts
   each post in site.posts.sort('date', 'desc').toArray()
-    - var reading_length = Math.ceil(post.content.replace(/[^a-zA-Z\s]/g, '').split(/[\s]+/).length / 250)
     a.article(href= config.root + post.path)
       article.item(itemscope, itemprop='blogPost', itemtype='https://schema.org/BlogPosting')
         h2(itemprop='headline')= post.title
