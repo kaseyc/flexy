@@ -1,20 +1,16 @@
 meta(charset='UTF-8')
 meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+title= title ? title + ' | ' + config.title : config.title
 
-title= page.title ? page.title + ' | ' + config.title : config.title
-
-meta(name='description', content= page.intro ? page.intro : config.meta_description)
+meta(name='description', content= intro ? intro : config.meta_description)
 meta(name='generator', content= config.title)
 meta(name='author', content= config.author)
-meta(name='keywords', content= theme.keywords)
+meta(name='keywords', content= keywords)
 meta(name='HandheldFriendly', content='True')
 meta(name='MobileOptimized', content='320')
 meta(name='viewport', content='width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=1')
 
 link(rel='stylesheet', type='text/css', href= config.root + 'styles/screen.css')
-if page.vendor
-   each val in page.vendor
-     <script src=/vendor/#{val}></script>
 
 if config.rss
   link(rel='alternate', type='application/rss+xml', title='RSS', href= config.rss)

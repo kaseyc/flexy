@@ -1,0 +1,31 @@
+extends ./layout.jade
+
+block content
+  article.full
+    h1(itemprop='headline')= title
+    != contents
+    - var lastyear = 0
+    for post, index in posts
+      - var date = new Date(post.date)
+      if lastyear != date.getFullYear()
+        if index != 0
+          | </ul>
+        - lastyear = date.getFullYear()
+        if lastyear
+          h4= lastyear
+        else
+          h4= 'Unknown'
+        | <ul>
+        li(itemprop='name')
+          a(href= config.root + post.path, itemprop='url') #{post.title}
+          if post.date
+            | &mdash;
+            time(itemprop='datePublished', datetime= date.toISOString())= date.toLocaleDateString()
+      else
+        li
+          a(href= config.root + post.path) #{post.title}
+          if post.date
+            |  &mdash;
+            time(itemprop='datePublished', datetime= date.toISOString())= date.toLocaleDateString()
+    if posts.length != 0
+      | </ul>

@@ -24,7 +24,7 @@
 
 @import 'normalize.css'
 @import 'nib'
-@import '_*'
+//@import '_*'
 
 // 0.1 Webfonts
 
@@ -95,7 +95,7 @@ $darker-blue   = darken($blue, 80%)
 
 // 0.4 Defaults
 
-$author = 'Sjaak van den Berg'
+$author = 'Kasey Carrothers'
 
 $title-color             = $blue
 $description-color       = $white
@@ -573,6 +573,14 @@ main
   section#comments
     border-top 1px solid hsla(0, 0, 0, .15)
     padding-top 20px
+  //Sticky Footer
+  #homepage
+    display flex
+    min-height 100vh
+    flex-direction column
+  #hp-body
+    flex 1
+
   // Footer
   footer
     padding 0

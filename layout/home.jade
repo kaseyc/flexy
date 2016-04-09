@@ -1,0 +1,17 @@
+extends ./layout.jade
+
+block content
+  #homepage
+    #hp-body
+      h4.page-title Recent Posts
+      each post in posts
+        a.article(href= config.root + post.path)
+          article.item(itemscope, itemprop='blogPost', itemtype='https://schema.org/BlogPosting')
+            h2(itemprop='headline')= post.title
+            if post.date
+              span.post-meta
+                | Published on 
+                time(itemprop='datePublished', datetime= post.date.toISOString())= new Date(post.date).toLocaleDateString()
+            p(itemprop='text').post-excerpt= post.intro ? post.intro : post.contents.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220)
+    footer(itemscope, itemtype='https://schema.org/WPFooter')
+      include _footer

@@ -1,0 +1,14 @@
+extends ./layout.jade
+
+block content
+  article.full
+    h1(itemprop='headline')= title
+    span.post-meta
+      if date
+        | Published on 
+        time(itemprop='datePublished', datetime= date.toISOString())= new Date(date).toLocaleDateString()
+        if updated
+          br
+          | Last updated on 
+          time(itemprop='dateModified', datetime= date.toISOString())= new Date(updated).toLocaleDateString()
+    != contents
