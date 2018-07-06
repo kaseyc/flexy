@@ -4,8 +4,9 @@ html(lang='en-us')
     include _head
     include _mixins
   body(itemscope, itemtype='https://schema.org/WebPage')
-    header(itemscope, itemtype='https://schema.org/WPHeader')
-      include _header
-      .space
+    header(itemscope, itemtype='https://schema.org/WPHeader')#header
+      div.test
+        include _header
+        //.space
     main(itemscope, itemtype='https://schema.org/Blog')
       block content
